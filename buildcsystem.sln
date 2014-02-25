@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buildcsystem", "buildcsystem\buildcsystem.csproj", "{99D00C7F-CB44-4E9E-9D95-EF708FF51250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuildProject", "MSBuildProject\MSBuildProject.csproj", "{C9FF1000-10A7-47B6-A45F-58500D60B412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildCSystem.Projects", "BuildCSystem.Projects\BuildCSystem.Projects.csproj", "{37AE2078-6A1F-411A-A1B9-9DD955EAD90C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{E75B4629-000F-4CFF-B25F-86B532473921}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37AE2078-6A1F-411A-A1B9-9DD955EAD90C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{37AE2078-6A1F-411A-A1B9-9DD955EAD90C}.Debug|x86.Build.0 = Debug|Any CPU
+		{37AE2078-6A1F-411A-A1B9-9DD955EAD90C}.Release|x86.ActiveCfg = Release|Any CPU
+		{37AE2078-6A1F-411A-A1B9-9DD955EAD90C}.Release|x86.Build.0 = Release|Any CPU
+		{99D00C7F-CB44-4E9E-9D95-EF708FF51250}.Debug|x86.ActiveCfg = Debug|x86
+		{99D00C7F-CB44-4E9E-9D95-EF708FF51250}.Debug|x86.Build.0 = Debug|x86
+		{99D00C7F-CB44-4E9E-9D95-EF708FF51250}.Release|x86.ActiveCfg = Release|x86
+		{99D00C7F-CB44-4E9E-9D95-EF708FF51250}.Release|x86.Build.0 = Release|x86
+		{C9FF1000-10A7-47B6-A45F-58500D60B412}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C9FF1000-10A7-47B6-A45F-58500D60B412}.Debug|x86.Build.0 = Debug|Any CPU
+		{C9FF1000-10A7-47B6-A45F-58500D60B412}.Release|x86.ActiveCfg = Release|Any CPU
+		{C9FF1000-10A7-47B6-A45F-58500D60B412}.Release|x86.Build.0 = Release|Any CPU
+		{E75B4629-000F-4CFF-B25F-86B532473921}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E75B4629-000F-4CFF-B25F-86B532473921}.Debug|x86.Build.0 = Debug|Any CPU
+		{E75B4629-000F-4CFF-B25F-86B532473921}.Release|x86.ActiveCfg = Release|Any CPU
+		{E75B4629-000F-4CFF-B25F-86B532473921}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = buildcsystem\buildcsystem.csproj
+	EndGlobalSection
+EndGlobal
