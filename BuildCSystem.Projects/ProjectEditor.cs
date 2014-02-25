@@ -27,6 +27,8 @@ namespace BuildCSystem.Projects
 
             AddReleaseConfig(false, "AnyCPU", "bin\\Release");
             AddDebugConfig(true, "AnyCPU", "bin\\Debug");
+            
+            Project.AddNewImport("$(MSBuildBinPath)\\Microsoft.CSharp.targets", null);
 
             ProjectFolder = Environment.CurrentDirectory;
         }
@@ -103,15 +105,18 @@ namespace BuildCSystem.Projects
         public void AddPropertyGroup( string platform, string config, bool debug, bool optimize, int warnings, string outdir )
         {
             var pg = Project.AddNewPropertyGroup(true);
-            pg ["DebugSymbols"] = debug.ToString();
-            pg ["Optimize"] = optimize.ToString();
+            pg ["DebugSymbols"] = debug.ToString().ToLower();
+            pg ["Optimize"] = optimize.ToString().ToLower();
             pg ["OutputPath"] = outdir;
             pg ["WarningLevel"] = warnings.ToString();
             pg ["ErrorReport"] = "prompt";
             pg ["ConsolePause"] = "false";
             pg ["DebugType"] = "full";
             pg.Condition = " '$(Configuration)|$(Platform)' == " + string.Format("'{0}|{1}'", config, platform);
-
+            if (debug)
+            {
+                pg ["DefineConstants"] = "DEBUG;";
+            }
 
         }
 
