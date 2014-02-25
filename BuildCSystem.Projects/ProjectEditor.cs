@@ -25,7 +25,7 @@ namespace BuildCSystem.Projects
             pg ["Configuration"] = "Debug";
             pg ["Platform"] = "AnyCPU";
 
-            AddReleaseConfig(false, "AnyCPU", "bin\\Debug");
+            AddReleaseConfig(false, "AnyCPU", "bin\\Release");
             AddDebugConfig(true, "AnyCPU", "bin\\Debug");
 
             ProjectFolder = Environment.CurrentDirectory;
@@ -113,6 +113,18 @@ namespace BuildCSystem.Projects
             pg.Condition = " '$(Configuration)|$(Platform)' == " + string.Format("'{0}|{1}'", config, platform);
 
 
+        }
+
+        public string GetDefaultConfig()
+        {
+            var cfg = GlobalProperties.GetProperty("Configuration");
+            return cfg.Value;
+        }
+
+        public string GetDefaultPlatform()
+        {
+            var pfg = GlobalProperties.GetProperty("Platform");
+            return pfg.Value;
         }
 
         public void SetDefaultConfiguration(string platform, string config)

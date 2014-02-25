@@ -24,6 +24,8 @@ namespace buildcsystem
             List<string> projrefs = new List<string>();
             List<string> asmrefs = new List<string>();
 
+            string outtype = null;
+            string arch = null;
             string toolsversion = null;
 
             bool dohelp = true;
@@ -34,6 +36,15 @@ namespace buildcsystem
 
             opts.Add("create", "create a new blank file",
                      (x) => createnew = true);
+
+            opts.Add("library", "set the output type to Library (default)",
+                     (x) => outtype = CSharpProjectOutputTypes.Library.ToString());
+
+            opts.Add("exe", "set the output type to Exe",
+                     (x) => outtype = CSharpProjectOutputTypes.Exe.ToString());
+
+            opts.Add("platform=", "set the PlatformTarget (x86, x64, AnyCPU etc)",
+                     (string x) => arch = x);
 
             opts.Add("name=", "set the output assembly name",
                      (string x) => asmname = x);
@@ -90,6 +101,21 @@ namespace buildcsystem
             if (toolsversion != null)
             {
                 pe.ToolsVersion = toolsversion;
+            }
+
+            if (outtype != null)
+            {
+                pe.OutputType = outtype;
+            }
+
+            if (arch != null)
+            {
+                var defarch = pe.GetDefaultPlatform();
+                if (defarch != arch)
+                {
+                    pe.AddDebugConfig(true, arch, "bin\\Debug");
+                    pe.AddReleaseConfig(false, arch, "bin\\Release");
+                }
             }
 
             if (pe.AssemblyName == "Untitled")
