@@ -8,9 +8,11 @@ Examples
 ---------
 
 $ buildcsystem --create --csproj foo.csproj --cs Program.cs --cs src/Guts.cs
+$ buildcsystem --csproj foo.csproj --cs src/More.cs
 
 Will create you a new file called foo.csproj that compiles Program.cs and
-src/Guts.cs.
+src/Guts.cs and the last one will add src/More.cs to it.  It also supports 
+other options to incrementally add dependencies on other projects or dlls
 
 License
 --------
